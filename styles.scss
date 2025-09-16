@@ -1,0 +1,54 @@
+$border-color: black;
+$background-color: #f2f2f2;
+$gap-size: 20px;
+$padding-size: 8px; 
+.container {
+    display: flex;
+    padding: 20px;
+    gap: $gap-size;
+}
+
+table {
+    width: 25%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        border: 1px solid $border-color;
+        padding: $padding-size;
+        text-align: left;
+    }
+
+    th {
+        background-color: $background-color;
+    }
+}
+
+.okvir {
+    border: 1px solid black;
+    width: 200px;
+    padding: 20px;
+    text-align: right;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: $gap-size;
+        text-align: left;
+
+        >div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid black;
+        }
+    }
+
+
+    button {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+table {
+  width: 25%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+table th {
+  background-color: #f2f2f2;
+}
+
+.okvir {
+  border: 1px solid black;
+  width: 200px;
+  padding: 20px;
+  text-align: right;
+}
+.okvir form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+  text-align: left;
+}
+.okvir form > div {
+  display: flex;
+  justify-content: space-between;
+}
+.okvir form input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+.okvir button {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
