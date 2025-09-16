@@ -27,7 +27,7 @@ table {
 .okvir {
     border: 1px solid black;
     width: 200px;
-    padding: 20px;
+    padding: $gap-size;
     text-align: right;
     form {
         display: flex;
@@ -52,3 +52,9 @@ table {
         cursor: pointer;
     }
 }
+
+#articleDetails{
+        margin: $gap-size;
+        padding: $gap-size;
+        width: 200px;
+    }
