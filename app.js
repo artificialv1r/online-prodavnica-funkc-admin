@@ -10,6 +10,7 @@ let artikli = [];
 
 function createArticleRows() {
   let table = document.querySelector("#articles-body");
+  table.innerHTML = "";
 
   for (let i = 0; i < artikli.length; i++) {
     let tr = document.createElement("tr");
@@ -42,6 +43,7 @@ function initializeArticels() {
   ];
 
   createArticleRows();
+  handleFormSubmission();
 }
 
 function displayArticleDetails(artikal) {
@@ -65,4 +67,25 @@ function displayArticleDetails(artikal) {
   detalji.appendChild(p);
 }
 
+function handleFormSubmission() {
+  let submitBtn = document.querySelector("#submitBtn");
+  submitBtn.addEventListener("click", function () {
+    const forma = document.querySelector("#forma");
+    const formData = new FormData(forma);
+
+    const naziv = formData.get("naziv");
+    const cena = formData.get("cena");
+    const opis = formData.get("opis");
+
+    if (!naziv || !cena || !opis) {
+      alert("Sva polja moraju biti popunjena!");
+      return;
+    }
+
+    const noviArtikal = new Artikal(naziv, cena, opis);
+    artikli.push(noviArtikal);
+
+    createArticleRows();
+  });
+}
 document.addEventListener("DOMContentLoaded", initializeArticels);
