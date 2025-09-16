@@ -36,11 +36,7 @@ function createArticleRows() {
 }
 
 function initializeArticels() {
-  artikli = [
-    new Artikal("Monitor", 165, "SAMSUNG S5 34 100Hz"),
-    new Artikal("Tv", 650, "Samsung TV 65 4K"),
-    new Artikal("Mis", 20, "Razer Mouse Viper 8KHz"),
-  ];
+  artikli = JSON.parse(localStorage.getItem("artikli"));
 
   createArticleRows();
   handleFormSubmission();
@@ -84,6 +80,7 @@ function handleFormSubmission() {
 
     const noviArtikal = new Artikal(naziv, cena, opis);
     artikli.push(noviArtikal);
+    localStorage.setItem("artikli", JSON.stringify(artikli));
 
     createArticleRows();
   });
